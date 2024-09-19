@@ -119,20 +119,28 @@ def decode(imageFileName):
         
 def main():
 
-    choice = int(input("=== Steganography === \n" 
+    while(True): 
+        choice = int(input("=== Steganography === \n" 
                        "Enter 1 to encode \n" 
-                       "Enter 2 to decode \n"))
+                       "Enter 2 to decode \n"
+                       "Enter 3 to exit \n"))
     
-    if(choice == 1):
-        image = input("Enter image name with extension: ")
-        data = input("Enter string you wish to encode: ")
-        encode(image, data)
-    elif(choice == 2):
-        image = input("Enter image name with extenstion you wish to decode: ")
-        decodedMessage = decode(image)
-        print(decodedMessage)
-    else:
-        print("Invaid Choice!")
+        if(choice == 1):
+            image = input("Enter image name with extension: ")
+            data = input("Enter string you wish to encode: ")
+            print("Encoding data....")
+            encode(image, data)
+            print("Encoding Successful")
+        elif(choice == 2):
+            image = input("Enter image name with extenstion you wish to decode: ")
+            print("Decoding data....")
+            decodedMessage = decode(image)
+            print(decodedMessage)
+        elif(choice == 3):
+            print("Exiting program")
+            exit(1)
+        else:
+            print("Invaid Choice!")
 
 
 if __name__ == "__main__":
